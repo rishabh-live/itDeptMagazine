@@ -1,0 +1,100 @@
+package itDeptMagazine;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JSplitPane;
+import javax.swing.BoxLayout;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Point;
+import java.awt.Insets;
+import java.awt.Rectangle;
+import java.awt.ComponentOrientation;
+import java.awt.Cursor;
+import java.awt.Component;
+
+public class MainFrame {
+
+	private JFrame frame;
+	private final JPanel panel = new JPanel();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainFrame window = new MainFrame();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MainFrame() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1045, 722);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel navigation_bar = new JPanel();
+		navigation_bar.setBackground(new Color(51, 153, 255));
+		navigation_bar.setBounds(0, -11, 224, 708);
+		frame.getContentPane().add(navigation_bar);
+		navigation_bar.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Login");
+		btnNewButton.setBorder(null);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewButton.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnNewButton.setBackground(new Color(0, 153, 255));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setBounds(0, 34, 224, 44);
+		navigation_bar.add(btnNewButton);
+		
+		JPanel content_tab = new JPanel();
+		content_tab.setOpaque(false);
+		content_tab.setAlignmentY(1.0f);
+		content_tab.setAlignmentX(Component.RIGHT_ALIGNMENT);
+		content_tab.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		content_tab.setBackground(new Color(255, 255, 255));
+		content_tab.setBounds(224, 81, 821, 592);
+		frame.getContentPane().add(content_tab);
+		panel.setBounds(224, -11, 821, 93);
+		frame.getContentPane().add(panel);
+	}
+
+	public boolean getFrameAlwaysOnTop() {
+		return frame.isAlwaysOnTop();
+	}
+	public void setFrameAlwaysOnTop(boolean alwaysOnTop) {
+		frame.setAlwaysOnTop(alwaysOnTop);
+	}
+}
