@@ -28,11 +28,17 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.JTextPane;
+import java.awt.GridLayout;
 
 public class MainFrame {
 
 	private JFrame frame;
+	private final JPanel panel_4_4 = new JPanel();
 	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -158,43 +164,185 @@ public class MainFrame {
 		
 		
 		JPanel panel = new JPanel();
+		panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		tabbedPane.addTab("New tab", null, panel, null);
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setLayout(null);
 		
-		JLabel lblLogin = new JLabel("@smit.smu.edu.in");
-		lblLogin.setForeground(new Color(169, 169, 169));
-		lblLogin.setFont(new Font("Gargi", Font.BOLD, 20));
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setBounds(493, 127, 182, 29);
-		panel.add(lblLogin);
+		JButton btnNewButton_2_1 = new JButton("Request OTP");
+		btnNewButton_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				tabbedPane.setSelectedIndex(4);
+				RequestOtp otp = new RequestOtp();
+				otp.send(textField.getText());
+			}
+		});
+		btnNewButton_2_1.setRolloverEnabled(false);
+		btnNewButton_2_1.setRequestFocusEnabled(false);
+		btnNewButton_2_1.setForeground(Color.WHITE);
+		btnNewButton_2_1.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnNewButton_2_1.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnNewButton_2_1.setBorderPainted(false);
+		btnNewButton_2_1.setBorder(null);
+		btnNewButton_2_1.setBackground(new Color(0, 153, 255));
+		btnNewButton_2_1.setBounds(267, 413, 224, 44);
+		panel.add(btnNewButton_2_1);
 		
-		final JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("/hdd/industrial trainong/vsem/src code/itDeptMagazine/itDeptMagazine/images/wave-0.jpg"));
-		label.setBounds(0, 379, 816, 340);
-		panel.add(label);
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(Color.WHITE);
+		panel_5.setBounds(12, 268, 816, 55);
+		panel.add(panel_5);
+		panel_5.setLayout(new GridLayout(0, 3, 0, 0));
 		
-		JLabel lblLogin_1 = new JLabel("Email");
-		lblLogin_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin_1.setFont(new Font("Gargi", Font.BOLD, 20));
-		lblLogin_1.setBounds(65, 120, 162, 35);
-		panel.add(lblLogin_1);
+		JLabel lblCollegeEmailId = new JLabel("College Email ID");
+		lblCollegeEmailId.setVerticalAlignment(SwingConstants.CENTER);
+		lblCollegeEmailId.setFont(new Font("Gargi", Font.BOLD, 25));
+		panel_5.add(lblCollegeEmailId);
 		
-		textField = new JTextField();
-		textField.setToolTipText("Enter your email-id  initials");
-		textField.setHorizontalAlignment(SwingConstants.LEFT);
-		textField.setBounds(260, 131, 227, 19);
-		panel.add(textField);
+		textField = new JTextField("my_email");
+		textField.setFont(new Font("Gargi", Font.BOLD, 25));
+		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setForeground(Color.RED);
+		panel_5.add(textField);
 		textField.setColumns(10);
+		textField.setBorder(new EmptyBorder(0, 0, 0, 0));
+		//textField.setVerticalAlignment(SwingConstants.BOTTOM);
+		
+		JLabel lblCollegeEmailId_1 = new JLabel("@smit.smu.edu.in");
+		lblCollegeEmailId_1.setVerticalAlignment(SwingConstants.CENTER);
+		lblCollegeEmailId_1.setFont(new Font("Gargi", Font.BOLD, 25));
+		panel_5.add(lblCollegeEmailId_1);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setIcon(new ImageIcon("/hdd/industrial trainong/vsem/src code/itDeptMagazine/itDeptMagazine/images/smit-logo.png"));
+		lblNewLabel_5.setBounds(0, 25, 816, 158);
+		panel.add(lblNewLabel_5);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 255, 255));
 		tabbedPane.addTab("New tab", null, panel_1, null);
 		panel_1.setLayout(null);
+		panel_1.setAutoscrolls(true);
 		
-		JLabel lblRead = new JLabel("Read");
-		lblRead.setBounds(355, 230, 70, 15);
-		panel_1.add(lblRead);
+		JPanel panel_4 = new JPanel();
+		panel_4.setBounds(12, 116, 784, 122);
+		panel_4.setBackground(Color.WHITE);
+		panel_1.add(panel_4);
+		panel_4.setLayout(null);
+		
+		JButton btnReadMore = new JButton("Read More");
+		btnReadMore.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnReadMore.setRolloverEnabled(false);
+		btnReadMore.setRequestFocusEnabled(false);
+		btnReadMore.setForeground(Color.WHITE);
+		btnReadMore.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnReadMore.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnReadMore.setBorderPainted(false);
+		btnReadMore.setBorder(null);
+		btnReadMore.setBackground(Color.RED);
+		btnReadMore.setBounds(548, 66, 224, 44);
+		panel_4.add(btnReadMore);
+		
+		JLabel lblNewLabel = new JLabel("Very Awsome Title");
+		lblNewLabel.setForeground(new Color(51, 153, 255));
+		lblNewLabel.setFont(new Font("FreeSans", Font.BOLD, 25));
+		lblNewLabel.setBounds(0, 0, 784, 44);
+		panel_4.add(lblNewLabel);
+		
+		JPanel panel_4_1 = new JPanel();
+		panel_4_1.setLayout(null);
+		panel_4_1.setBackground(Color.WHITE);
+		panel_4_1.setBounds(12, 270, 784, 122);
+		panel_1.add(panel_4_1);
+		
+		JButton btnReadMore_1 = new JButton("Read More");
+		btnReadMore_1.setRolloverEnabled(false);
+		btnReadMore_1.setRequestFocusEnabled(false);
+		btnReadMore_1.setForeground(Color.WHITE);
+		btnReadMore_1.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnReadMore_1.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnReadMore_1.setBorderPainted(false);
+		btnReadMore_1.setBorder(null);
+		btnReadMore_1.setBackground(Color.RED);
+		btnReadMore_1.setBounds(548, 66, 224, 44);
+		panel_4_1.add(btnReadMore_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("Very Awsome Title");
+		lblNewLabel_1.setForeground(new Color(51, 153, 255));
+		lblNewLabel_1.setFont(new Font("FreeSans", Font.BOLD, 25));
+		lblNewLabel_1.setBounds(0, 0, 784, 44);
+		panel_4_1.add(lblNewLabel_1);
+		
+		JPanel panel_4_2 = new JPanel();
+		panel_4_2.setLayout(null);
+		panel_4_2.setBackground(Color.WHITE);
+		panel_4_2.setBounds(12, 449, 784, 122);
+		panel_1.add(panel_4_2);
+		
+		JButton btnReadMore_2 = new JButton("Read More");
+		btnReadMore_2.setRolloverEnabled(false);
+		btnReadMore_2.setRequestFocusEnabled(false);
+		btnReadMore_2.setForeground(Color.WHITE);
+		btnReadMore_2.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnReadMore_2.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnReadMore_2.setBorderPainted(false);
+		btnReadMore_2.setBorder(null);
+		btnReadMore_2.setBackground(Color.RED);
+		btnReadMore_2.setBounds(548, 66, 224, 44);
+		panel_4_2.add(btnReadMore_2);
+		
+		JLabel lblNewLabel_2 = new JLabel("Very Awsome Title");
+		lblNewLabel_2.setForeground(new Color(51, 153, 255));
+		lblNewLabel_2.setFont(new Font("FreeSans", Font.BOLD, 25));
+		lblNewLabel_2.setBounds(0, 0, 784, 44);
+		panel_4_2.add(lblNewLabel_2);
+		
+		JPanel panel_4_3 = new JPanel();
+		panel_4_3.setLayout(null);
+		panel_4_3.setBackground(Color.WHITE);
+		panel_4_3.setBounds(12, 597, 784, 122);
+		panel_1.add(panel_4_3);
+		
+		JButton btnReadMore_3 = new JButton("Read More");
+		btnReadMore_3.setRolloverEnabled(false);
+		btnReadMore_3.setRequestFocusEnabled(false);
+		btnReadMore_3.setForeground(Color.WHITE);
+		btnReadMore_3.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnReadMore_3.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnReadMore_3.setBorderPainted(false);
+		btnReadMore_3.setBorder(null);
+		btnReadMore_3.setBackground(Color.RED);
+		btnReadMore_3.setBounds(548, 66, 224, 44);
+		panel_4_3.add(btnReadMore_3);
+		
+		JLabel lblNewLabel_3 = new JLabel("Very Awsome Title");
+		lblNewLabel_3.setForeground(new Color(51, 153, 255));
+		lblNewLabel_3.setFont(new Font("FreeSans", Font.BOLD, 25));
+		lblNewLabel_3.setBounds(0, 0, 784, 44);
+		panel_4_3.add(lblNewLabel_3);
+		panel_4_4.setBounds(0, 0, 0, 0);
+		panel_1.add(panel_4_4);
+		panel_4_4.setLayout(null);
+		panel_4_4.setBackground(Color.WHITE);
+		
+		JButton btnReadMore_4 = new JButton("Read More");
+		btnReadMore_4.setRolloverEnabled(false);
+		btnReadMore_4.setRequestFocusEnabled(false);
+		btnReadMore_4.setForeground(Color.WHITE);
+		btnReadMore_4.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnReadMore_4.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnReadMore_4.setBorderPainted(false);
+		btnReadMore_4.setBorder(null);
+		btnReadMore_4.setBackground(Color.RED);
+		btnReadMore_4.setBounds(548, 66, 224, 44);
+		panel_4_4.add(btnReadMore_4);
+		
+		JLabel lblNewLabel_4 = new JLabel("Very Awsome Title");
+		lblNewLabel_4.setForeground(new Color(51, 153, 255));
+		lblNewLabel_4.setFont(new Font("FreeSans", Font.BOLD, 25));
+		lblNewLabel_4.setBounds(0, 0, 784, 44);
+		panel_4_4.add(lblNewLabel_4);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 255, 255));
@@ -240,6 +388,54 @@ public class MainFrame {
 		lblAug.setBounds(462, 375, 108, 27);
 		panel_3.add(lblAug);
 		
+		JPanel panel_6 = new JPanel();
+		panel_6.setLayout(null);
+		panel_6.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		panel_6.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, panel_6, null);
+		
+		JButton btnNewButton_2_1_1 = new JButton("Confirm OTP");
+		btnNewButton_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton_2_1_1.setRolloverEnabled(false);
+		btnNewButton_2_1_1.setRequestFocusEnabled(false);
+		btnNewButton_2_1_1.setForeground(Color.WHITE);
+		btnNewButton_2_1_1.setFont(new Font("Gargi", Font.BOLD, 20));
+		btnNewButton_2_1_1.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		btnNewButton_2_1_1.setBorderPainted(false);
+		btnNewButton_2_1_1.setBorder(null);
+		btnNewButton_2_1_1.setBackground(new Color(0, 153, 255));
+		btnNewButton_2_1_1.setBounds(267, 413, 224, 44);
+		panel_6.add(btnNewButton_2_1_1);
+		
+		JPanel panel_5_1 = new JPanel();
+		panel_5_1.setBackground(Color.WHITE);
+		panel_5_1.setBounds(0, 269, 816, 55);
+		panel_6.add(panel_5_1);
+		panel_5_1.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JLabel lblCollegeEmailId_2 = new JLabel("Enter OTP        ");
+		lblCollegeEmailId_2.setHorizontalAlignment(SwingConstants.TRAILING);
+		lblCollegeEmailId_2.setVerticalAlignment(SwingConstants.CENTER);
+		lblCollegeEmailId_2.setFont(new Font("Gargi", Font.BOLD, 25));
+		panel_5_1.add(lblCollegeEmailId_2);
+		
+		textField_1 = new JTextField("#######");
+		textField_1.setHorizontalAlignment(SwingConstants.LEFT);
+		textField_1.setForeground(Color.RED);
+		textField_1.setFont(new Font("Gargi", Font.BOLD, 25));
+		textField_1.setColumns(10);
+		textField_1.setBorder(new EmptyBorder(0, 0, 0, 0));
+		panel_5_1.add(textField_1);
+		
+		JLabel lblNewLabel_5_1 = new JLabel("");
+		lblNewLabel_5_1.setIcon(new ImageIcon("/hdd/industrial trainong/vsem/src code/itDeptMagazine/itDeptMagazine/images/smit-logo.png"));
+		lblNewLabel_5_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5_1.setBounds(0, 25, 816, 158);
+		panel_6.add(lblNewLabel_5_1);
+		
 		frame.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {
@@ -250,7 +446,7 @@ public class MainFrame {
 				navigation_bar.setBounds(0, -11, 224, windowHeight);
 				tabbedPane.setBounds(224, -61, windowWidth, windowHeight+30);
 				
-				label.setPreferredSize(new Dimension(windowWidth, label.getHeight()) );
+				
 				
 				
 			}
