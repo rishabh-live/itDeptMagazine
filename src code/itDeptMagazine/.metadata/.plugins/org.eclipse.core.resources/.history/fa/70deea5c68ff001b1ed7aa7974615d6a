@@ -1,0 +1,35 @@
+package itDeptMagazine;
+
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+public class RequestOtp {
+	
+	public void send(String email) {
+		int otpVal = otpGenerator();
+		writeToFile(email,otpVal);
+	}
+	
+	private int otpGenerator() {
+		int otp = 0;
+		int max = 999999;
+		int min = 100000;
+		otp = (int) ((Math.random() * (max - min)) + min);
+		return otp;
+	}
+	
+	private void writeToFile(String email, int data) {
+		try {
+		      FileWriter myWriter = new FileWriter(email + ".txt");
+		      myWriter.write(data);
+		      myWriter.close();
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+
+	}
+}

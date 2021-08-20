@@ -1,3 +1,19 @@
 INDEX VERSION 1.131+/hdd/industrial trainong/vsem/src code/itDeptMagazine/.metadata/.plugins/org.eclipse.jdt.core
-646308851.index
+3643096666.index
+768807065.index
+3810334628.index
+3509077574.index
+1217341977.index
+3313919966.index
 2975902704.index
+691881839.index
+2613535316.index
+4056590023.index
+3762238915.index
+3438768712.index
+161451884.index
+3866347108.index
+3260513357.index
+646308851.index
+320882564.index
+1874324753.index

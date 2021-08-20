@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1629018176312
+# List of external plug-in models previously loaded. Timestamp: 1629213096346
 file:/snap/eclipse/48/plugins/ch.qos.logback.classic_1.1.2.v20171220-1825.jar
 file:/snap/eclipse/48/plugins/ch.qos.logback.core_1.1.2.v20160208-0839.jar
 file:/snap/eclipse/48/plugins/ch.qos.logback.slf4j_1.1.2.v20160301-0943.jar
@@ -9,6 +9,7 @@ file:/snap/eclipse/48/plugins/com.ibm.icu_64.2.0.v20190507-1337.jar
 file:/snap/eclipse/48/plugins/com.jcraft.jsch_0.1.55.v20190404-1902.jar
 file:/snap/eclipse/48/plugins/com.jcraft.jzlib_1.1.1.v201205102305.jar
 file:/snap/eclipse/48/plugins/com.sun.el_2.2.0.v201303151357.jar
+file:/home/rishabh/.eclipse/360744286_linux_gtk_x86_64/plugins/com.wakatime.eclipse.plugin_3.0.8.jar
 file:/home/rishabh/.eclipse/360744286_linux_gtk_x86_64/plugins/de.jcup.yamleditor_1.8.0.jar
 file:/snap/eclipse/48/plugins/javaewah_1.1.6.v20160919-1400.jar
 file:/snap/eclipse/48/plugins/javax.activation_1.1.0.v201211130549.jar

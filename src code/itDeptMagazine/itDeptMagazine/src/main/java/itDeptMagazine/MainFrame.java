@@ -190,7 +190,7 @@ public class MainFrame {
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBackground(Color.WHITE);
-		panel_5.setBounds(12, 268, 816, 55);
+		panel_5.setBounds(0, 268, 816, 55);
 		panel.add(panel_5);
 		panel_5.setLayout(new GridLayout(0, 3, 0, 0));
 		

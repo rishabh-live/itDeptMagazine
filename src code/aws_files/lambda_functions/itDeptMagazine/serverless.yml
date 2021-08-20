@@ -1,0 +1,19 @@
+service: verifyemaildomainnamesmit
+
+provider:
+   name: aws
+   runtime: java11
+   profile: default
+   region: ap-south-1
+   timeout: 10
+   memorySize: 128
+   
+package:
+   artifact: target/itDeptMagazine.jar
+functions: 
+   requestOtp:
+      handler: live.rishabh.project.aws.vsem.itDeptMagazine.RequestOtp
+      events:
+         - http:
+               method: POST
+               path: /request-otp

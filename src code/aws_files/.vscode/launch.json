@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "itDeptMagazine:live.rishabh.project.aws.vsem.itDeptMagazine.ItDeptMagazineApplication::handleRequest (java11)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/lambda_functions/itDeptMagazine",
+                "lambdaHandler": "live.rishabh.project.aws.vsem.itDeptMagazine.ItDeptMagazineApplication::handleRequest"
+            },
+            "lambda": {
+                "runtime": "java11",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        }
+    ]
+}

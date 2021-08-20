@@ -1,0 +1,16 @@
+package itDeptMagazine;
+
+public class RequestOtp {
+	
+	public void send() {
+		System.out.println(otpGenerator());
+	}
+	
+	private int otpGenerator() {
+		int otp = 0;
+		int max = 999999;
+		int min = 100000;
+		otp = (int) ((Math.random() * (max - min)) + min);
+		return otp;
+	}
+}

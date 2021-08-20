@@ -1,0 +1,17 @@
+package itDeptMagazine;
+
+public class SendOTP {
+	
+	public int RequestOTP() {
+		
+		int otpData = registerOTP();
+		
+		
+		return 1;
+	}
+	
+	private int registerOTP() {
+		return otpVal;
+	}
+
+}
