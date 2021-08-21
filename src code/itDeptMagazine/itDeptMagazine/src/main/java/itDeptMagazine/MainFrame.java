@@ -172,22 +172,15 @@ public class MainFrame {
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setLayout(null);
 		
-		JLabel lblProccessingRequest = new JLabel("Proccessing Request...");
-		lblProccessingRequest.setVisible(false);
-		lblProccessingRequest.setHorizontalAlignment(SwingConstants.CENTER);
-		lblProccessingRequest.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 19));
-		lblProccessingRequest.setBounds(230, 491, 323, 78);
-		panel.add(lblProccessingRequest);
-		
 		JButton btnNewButton_2_1 = new JButton("Request OTP");
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				RequestOtp otp = new RequestOtp();
 				try {
-					lblProccessingRequest.setVisible(true);
+					
 					otp.send(textField.getText());
-					lblProccessingRequest.setVisible(false);
+				
 					tabbedPane.setSelectedIndex(4);
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
