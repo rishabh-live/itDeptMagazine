@@ -26,6 +26,8 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.net.MalformedURLException;
+
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -163,18 +165,34 @@ public class MainFrame {
 		
 		
 		
+		
 		JPanel panel = new JPanel();
 		panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		tabbedPane.addTab("New tab", null, panel, null);
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setLayout(null);
 		
+		JLabel lblProccessingRequest = new JLabel("Proccessing Request...");
+		lblProccessingRequest.setVisible(false);
+		lblProccessingRequest.setHorizontalAlignment(SwingConstants.CENTER);
+		lblProccessingRequest.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 19));
+		lblProccessingRequest.setBounds(230, 491, 323, 78);
+		panel.add(lblProccessingRequest);
+		
 		JButton btnNewButton_2_1 = new JButton("Request OTP");
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tabbedPane.setSelectedIndex(4);
+				
 				RequestOtp otp = new RequestOtp();
-				otp.send(textField.getText());
+				try {
+					lblProccessingRequest.setVisible(true);
+					otp.send(textField.getText());
+					lblProccessingRequest.setVisible(false);
+					tabbedPane.setSelectedIndex(4);
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		btnNewButton_2_1.setRolloverEnabled(false);
@@ -218,6 +236,8 @@ public class MainFrame {
 		lblNewLabel_5.setIcon(new ImageIcon("/hdd/industrial trainong/vsem/src code/itDeptMagazine/itDeptMagazine/images/smit-logo.png"));
 		lblNewLabel_5.setBounds(0, 25, 816, 158);
 		panel.add(lblNewLabel_5);
+		
+		
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 255, 255));
