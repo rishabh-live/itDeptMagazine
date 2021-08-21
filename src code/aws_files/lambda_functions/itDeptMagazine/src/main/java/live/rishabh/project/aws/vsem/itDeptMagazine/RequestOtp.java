@@ -20,6 +20,7 @@ public class RequestOtp implements RequestHandler<APIGatewayProxyRequestEvent, A
 
 		System.out.println(splitRequestBody);
 		String email = "";
+		String otp = "";
 
 		// System.out.println(splitRequestBody[i]);
 
@@ -29,18 +30,19 @@ public class RequestOtp implements RequestHandler<APIGatewayProxyRequestEvent, A
 																				// build
 								|| splitRequestBody[3].equals("android-app-v2") // check if the request is for the
 																				// android app
-						))) {
+						)) && splitRequestBody[4].equals("otp")) {
 			email = splitRequestBody[1];
+			otp = splitRequestBody[5];
 			System.out.println(email);
 
 			SendEmail sendEmail = new SendEmail();
 			boolean sendEmailresp;
 
-			sendEmailresp = sendEmail.requestEmail(email);
+			sendEmailresp = sendEmail.requestEmail(email,otp);
 
 			if (sendEmailresp) {
 				responseEvent.setStatusCode(200);
-				responseEvent.setBody("{\"message\" : \"Working Properly\" }");
+				responseEvent.setBody("{\"message\" : \"Email Delivered\" }");
 			} else {
 				responseEvent.setStatusCode(500);
 				responseEvent.setBody("{\"message\" : \"Failed to send Email\" }");

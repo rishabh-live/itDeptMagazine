@@ -12,12 +12,12 @@ import javax.mail.internet.MimeMessage;
 
 
 public class SendEmail {
-    public boolean requestEmail(String email)  {
+    public boolean requestEmail(String email, String otp)  {
        
 
         // Add recipient
         String to = email + "@smit.smu.edu.in";
-
+        String otpval = otp;
         // Add sender
         String from = System.getenv("EMAIL_ID");
         final String username = System.getenv("EMAIL_ID");// your Gmail username
@@ -47,10 +47,10 @@ public class SendEmail {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
 
             // Set Subject
-            message.setSubject("Hi JAXenter");
+            message.setSubject("Auth : SMIT IT Dept Login");
 
             // Put the content of your message
-            message.setText("Hi there,we are just experimenting with JavaMail here");
+            message.setText("Hi "+ email + ",we recived an request for email authorization. \n Ignore if not requested. Your OTP is : " + otpval);
 
             // Send message
             Transport.send(message);
